@@ -12,7 +12,7 @@ function login(){
             
             // window.location.hostname/home.html;
             // console.log("hi");
-            window.location.assign("../home.html");
+            window.location.assign("./home.html");
     }
 }
 }    
