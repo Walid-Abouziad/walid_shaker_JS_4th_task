@@ -1,2 +1,5 @@
-// https://walid-abouziad.github.io/walid_shaker_JS_4th_task/index.html
-// https://walid-abouziad.github.io/home.html
+
+document.getElementById("username").innerHTML = "Welcome "  + sessionStorage.getItem("userName");
+function logout(){
+    sessionStorage.removeItem('userName')
+}

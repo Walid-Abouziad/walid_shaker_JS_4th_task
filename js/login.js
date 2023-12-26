@@ -9,9 +9,8 @@ function login(){
     }
     for( var i=0 ; i<usersList.length  ; i++){
         if(usersList[i].signEmail.toLowerCase() == loginEmail.toLowerCase() && usersList[i].signupPassword == loginPassword){
-            
-            // window.location.hostname/home.html;
-            // console.log("hi");
+            sessionStorage.setItem("userName", usersList[i].name);
+
             window.location.assign("./home.html");
     }
 }
