@@ -8,26 +8,33 @@ if(localStorage.getItem("users") !=null){
     usersList = JSON.parse(localStorage.getItem("users"));
 }
 function signUp(){
-    if((validationName() == true  && validationEmail() == true && validationPassword() == true) || (validationEmail() == true && validationName() == true && validationPassword() == true) || (validationPassword() == true && validationEmail() == true && validationName() == true)){
-        
+    if((validationName() == true   && validationEmail() == true && validationPassword() == true) || (validationEmail() == true && validationName() == true && validationPassword() == true) || (validationPassword() == true && validationEmail() == true && validationName() == true)){
             var user = {
                 name: signupNameInput.value ,
                 signEmail: signupEmailInput.value ,
                 signupPassword: signupPasswordInput.value ,
             }
         }
-    
-        usersList.push(user);
-    
-    
-        localStorage.setItem("users",JSON.stringify(usersList));
-    
-        clearForm();
 
-        signupNameInput.classList.remove("is-valid");
-        signupEmailInput.classList.remove("is-valid");
-        signupPasswordInput.classList.remove("is-valid");
-    }
+        if (validationEmailExist() == false) {
+            Swal.fire("Email already exist!");
+    
+        } else {
+
+            usersList.push(user);
+    
+    
+            localStorage.setItem("users",JSON.stringify(usersList));
+        
+            clearForm();
+    
+            signupNameInput.classList.remove("is-valid");
+            signupEmailInput.classList.remove("is-valid");
+            signupPasswordInput.classList.remove("is-valid");
+            window.location.assign("./index.html");
+        }
+        
+    }  
 
 
 function clearForm (){ 
@@ -90,3 +97,10 @@ function validationPassword(){
     }
 }
 
+function validationEmailExist() {
+    for (var i = 0; i < usersList.length; i++) {
+        if (usersList[i].signEmail.toLowerCase() == signupEmailInput.value.toLowerCase()) {
+            return false
+        }
+    }
+}
