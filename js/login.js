@@ -13,5 +13,8 @@ function login(){
 
             window.location.assign("./home.html");
     }
+        
 }
-}    
+Swal.fire("User is not exist");
+       
+}     
