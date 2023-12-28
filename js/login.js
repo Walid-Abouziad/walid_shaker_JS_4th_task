@@ -12,9 +12,9 @@ function login(){
             sessionStorage.setItem("userName", usersList[i].name);
 
             window.location.assign("./home.html");
+    }else{
+        Swal.fire("User is not exist");  
     }
-    Swal.fire("User is not exist");  
 }
-
-       
+    
 }     
