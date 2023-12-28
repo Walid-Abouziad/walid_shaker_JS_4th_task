@@ -10,7 +10,7 @@ if (sessionStorage.getItem("userName") == null){
         icon: "error",
         showCancelButton: false,
         confirmButtonText: "Yes, log in!",
-        reverseButtons: true
+        reverseButtons: false
       }).then((result) => {
           window.location.assign("./index.html");
       });
