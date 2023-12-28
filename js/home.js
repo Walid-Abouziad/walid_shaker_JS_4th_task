@@ -12,13 +12,7 @@ if (sessionStorage.getItem("userName") == null){
         confirmButtonText: "Yes, log in!",
         reverseButtons: true
       }).then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success"
-          });
-        } window.location.assign("./index.html");
+          window.location.assign("./index.html");
       });
     // window.location.assign("./index.html");
 }else
